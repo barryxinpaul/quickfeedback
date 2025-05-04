@@ -5,6 +5,7 @@ import { Component } from '@angular/core'; // Import Component decorator
 import { HttpClient, HttpErrorResponse } from '@angular/common/http'; // Import HttpClient
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { CommonModule } from '@angular/common'; // Import CommonModule
+import { environment } from '../../environments/environment';
 
 //Feedback form component 
 @Component({
@@ -35,7 +36,7 @@ export class FeedbackFormComponent {
         this.successMessage = ''; // Clear the success message
 
         // Send the feedback message to the backend domain/host/origin using the post method
-        this.http.post('http://localhost:3000/feedback', { message: this.feedback })
+        this.http.post(environment.backendUrl, { message: this.feedback })
         // Subscribe keeps track of the response from the backend
             .subscribe({
                 next: (response) => {
