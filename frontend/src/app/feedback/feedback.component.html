@@ -1,0 +1,9 @@
+
+<!-- This is the HTML component for the feedback form -->
+<!-- It is used to display the feedback for the user to see the feedback that has been submitted and is reusable -->
+
+<div class="p-4">
+    <h1 class="text-xl font-bold mb-2">Submit Feedback</h1>
+    <textarea [(ngModel)]="message" class="border p-2 w-full"></textarea>
+    <button (click)="submit()" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+</div>
